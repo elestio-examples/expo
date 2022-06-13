@@ -1,0 +1,26 @@
+config:
+  runTime: "NodeJs"
+  version: ""
+  framework: "Expo"
+  buildCommand: "yarn build"
+  buildDir: "web-build"
+  runCommand: "yarn web"
+  installCommand: "yarn install"
+ports:
+  - protocol: "HTTPS"
+    targetProtocol: "HTTP"
+    listeningPort: "443"
+    targetPort: "19006"
+    public: true
+    path: "/"
+    isAuth: false
+    login: ""
+    password: ""
+environments:
+  - key: "ENV"
+    value: "production"
+exposedPorts:
+  - protocol: "HTTP"
+    hostPort: "19006"
+    containerPort: "19006"
+    interface: "172.17.0.1"
